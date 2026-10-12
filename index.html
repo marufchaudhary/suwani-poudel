@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwani Poudel | Poet, Law Student & Social Reformer</title>
+    
+    <!-- Google Fonts for Editorial Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        lora: ['"Lora"', 'serif'],
+                    },
+                    colors: {
+                        parchment: '#F9F6F0',
+                        charcoal: '#2A2A2A',
+                        charcoalLight: '#4A4A4A',
+                        earth: '#8B6A56', // Soft earthy rust tone for accents
+                        sage: '#6b7a66' // Muted green for environmental touch
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #F9F6F0; /* Warm ivory/parchment */
+            color: #2A2A2A;
+        }
+
+        /* Elegant Drop Cap for About Section */
+        .drop-cap-two {
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 0.5rem;
+            padding-top: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            color: #8B6A56;
+        }
+
+        /* Image hover effects */
+        .img-zoom-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .img-zoom-container img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .group:hover .img-zoom-container img {
+            transform: scale(1.05);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F6F0; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4cfc5; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B6A56; 
+        }
+
+        /* Lightbox styling */
+        #lightbox {
+            background-color: rgba(42, 42, 42, 0.95);
+        }
+        
+        /* Thin elegant separators */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(42,42,42,0.1), transparent);
+            margin: 3rem auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body class="font-lora antialiased selection:bg-earth/30 selection:text-charcoal">
+
+    <nav class="fixed w-full z-50 bg-parchment/90 backdrop-blur-sm border-b border-charcoal/5 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="#home" class="font-playfair text-xl font-bold text-charcoal tracking-widest uppercase">Suwani</a>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#about" class="text-charcoalLight hover:text-earth text-sm font-medium transition-colors uppercase tracking-[0.15em]">About</a>
+                    <a href="#gallery" class="text-charcoalLight hover:text-earth text-sm font-medium transition-colors uppercase tracking-[0.15em]">Gallery</a>
+                    <a href="#videos" class="text-charcoalLight hover:text-earth text-sm font-medium transition-colors uppercase tracking-[0.15em]">Social Work</a>
+                     <a href="#contact" class="text-charcoalLight hover:text-earth text-sm font-medium transition-colors uppercase tracking-[0.15em]">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-charcoal focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-parchment border-t border-charcoal/5 absolute w-full left-0 shadow-lg">
+            <div class="px-4 pt-4 pb-6 space-y-4 text-center">
+                <a href="#about" class="block px-3 py-2 text-sm uppercase tracking-widest text-charcoalLight hover:text-earth">About</a>
+                <a href="#gallery" class="block px-3 py-2 text-sm uppercase tracking-widest text-charcoalLight hover:text-earth">Gallery</a>
+                <a href="#videos" class="block px-3 py-2 text-sm uppercase tracking-widest text-charcoalLight hover:text-earth">Social Work</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 flex items-center justify-center min-h-screen">
+        <div class="px-4 w-full max-w-4xl mx-auto text-center opacity-0 animate-fade-in-up">
+            
+            <!-- Beautiful Circular Profile Picture -->
+            <div class="mb-8 relative inline-block">
+                <div class="absolute inset-0 rounded-full border border-earth/40 transform scale-105"></div>
+                <!-- Placeholder image for Suwani -->
+                <img src="images\1.jpg"
+                     alt="Suwani Poudel" 
+                     class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-full shadow-lg mx-auto border-4 border-parchment filter contrast-[1.05] sepia-[0.1]">
+            </div>
+
+            <p class="font-lora italic text-earth text-sm md:text-base mb-4 tracking-wider flex items-center justify-center gap-3">
+                <span class="w-8 h-[1px] bg-earth/40"></span>
+                Hare Krishna 🙇‍♀️
+                <span class="w-8 h-[1px] bg-earth/40"></span>
+            </p>
+            
+            <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl font-medium text-charcoal mb-6">
+                Suwani Poudel
+            </h1>
+            
+            <p class="font-playfair text-xl md:text-2xl text-charcoalLight mb-10 tracking-wide">
+                Poet <span class="text-earth/50 mx-2">&bull;</span> Law Student <span class="text-earth/50 mx-2">&bull;</span> Social Reformer
+            </p>
+            
+            <a href="#about" class="inline-flex flex-col items-center text-charcoalLight hover:text-earth transition-colors duration-300 group">
+                <span class="text-xs uppercase tracking-[0.2em] mb-2 font-medium">Discover Her Story</span>
+                <i class="fas fa-chevron-down text-sm animate-bounce group-hover:animate-none group-hover:translate-y-1 transition-transform"></i>
+            </a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="about" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-1000">
+                <h2 class="font-playfair text-4xl md:text-5xl font-medium text-charcoal mb-4">My Journey</h2>
+                <div class="w-12 h-1 bg-earth mx-auto rounded"></div>
+            </div>
+
+            <!-- Side-by-Side Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Picture Side -->
+                <div class="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-1000 delay-100">
+                    <!-- Elegant background offset frame -->
+                    <div class="absolute -inset-4 border border-charcoal/10 rounded-sm translate-x-4 translate-y-4"></div>
+                    <img src="images\2.jpg"
+                         alt="Suwani" 
+                         class="relative z-10 w-full h-auto object-cover rounded-sm shadow-xl aspect-[3/4] grayscale-[20%] hover:grayscale-0 transition-all duration-500">
+                    
+                    <!-- Author Badge -->
+                    <div class="absolute -bottom-6 -left-6 z-20 bg-parchment border border-charcoal/10 p-5 rounded-sm shadow-lg text-center max-w-[180px]">
+                        <i class="fas fa-feather-alt text-earth text-2xl mb-2"></i>
+                        <p class="font-playfair text-charcoal font-medium">Author of</p>
+                        <p class="font-lora text-charcoalLight italic text-sm">"Bal Bagaicha"</p>
+                    </div>
+                </div>
+
+                
+                <!-- Text Side -->
+                <div class="space-y-6 text-charcoalLight leading-relaxed scroll-reveal opacity-0 translate-y-8 transition-all duration-1000 delay-200">
+                    <p class="drop-cap text-lg md:text-xl">
+                        <span class="drop-cap-two">An</span>enthusiastic and deeply devoted soul, I weave my life through the powerful disciplines of justice, literature, and active reform. Guided by my unwavering faith as a <strong class="text-charcoal font-medium">Krishna Bhakt</strong>, I channel my spiritual strength into tangible actions for my country, Nepal.
+                    </p>
+                    
+                    <p class="text-lg md:text-xl">
+                        As a dedicated LLB student at <strong class="text-charcoal font-medium">Prithvi Narayan Campus, Tribhuvan University</strong>, I am preparing myself to be a voice of justice. I believe the law is a vital instrument for healing society and defending the defenseless.
+                    </p>
+
+                    <blockquote class="my-8 py-6 pl-6 border-l-2 border-earth font-playfair text-2xl md:text-3xl italic text-charcoal leading-snug">
+                        "A fierce advocate for change, a voice for the voiceless, and a guardian of my homeland's environment."
+                    </blockquote>
+
+                    <p class="text-lg md:text-xl">
+                        Beyond the courtroom, I am a poet <strong class="text-charcoal font-medium">(कवियत्री)</strong> and the author of <i>"Bal Bagaicha"</i>. Through the beautiful Nepali language, I write verses that capture the essence of life, struggle, and profound beauty.
+                    </p>
+                    
+                    <p class="text-lg md:text-xl">
+                        My words are matched only by my actions. I am a social worker and reformer. During the <strong class="text-charcoal font-medium">Nepal Gen-Z Revolution</strong>, I stood boldly on the frontlines. Today, I continue to organize rallies to protest injustices in my local area and spearhead vital environmental cleanup campaigns to preserve the natural beauty of my homeland.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="gallery" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-1000">
+                <h2 class="font-playfair text-4xl md:text-5xl font-medium text-charcoal mb-4">Glimpses of a Life</h2>
+                <p class="font-lora text-charcoalLight italic">Moments of poetry, law, and revolution.</p>
+                <div class="w-12 h-1 bg-earth mx-auto rounded mt-6"></div>
+            </div>
+
+            <!-- Scalable CSS Grid (Easy to add 100+ images) -->
+            <!-- Scalable CSS Grid Container -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" id="photo-grid">
+                <!-- JavaScript will dynamically generate items 3.jpg through 100.jpg here -->
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-charcoalLight text-sm italic font-lora">
+                    <i class="fas fa-images mr-2 text-earth"></i> Memories and moments captured.
+                </p>
+            </div>
+    </section>
+
+    <div class="divider"></div>
+
+   <!-- Social Work & Activism Instagram Reels Section -->
+<!-- Social Work Instagram Reels Section -->
+<section id="videos" class="py-20 bg-parchment/40 border-t border-earth/10">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+            <span class="text-earth text-sm uppercase tracking-widest font-lora">Activism in Motion</span>
+            <h2 class="font-playfair text-3xl md:text-4xl text-charcoal font-bold mt-2">Social Work Reels</h2>
+            <p class="font-lora text-charcoalLight italic mt-2 max-w-xl mx-auto">
+                Glimpses of environmental cleanups, advocacy, and youth movements captured across Nepal.
+            </p>
+        </div>
+
+        <!-- Dynamic Grid for 4 to 8 Vertical Reels -->
+        <div id="video-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Reels inserted automatically by JS -->
+        </div>
+
+    </div>
+</section>
+
+<!-- Single Reel Pop-up Modal (Instagram Reel Phone Frame) -->
+<div id="reel-modal" 
+     onclick="closeReelModal()" 
+     class="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+    
+    <!-- Modal Close Button -->
+    <button onclick="closeReelModal()" 
+            class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors focus:outline-none z-[101]">
+        <i class="fas fa-times text-3xl"></i>
+    </button>
+    
+    <!-- Phone Frame Container (Constrained width & height to prevent over-zooming) -->
+    <div class="relative w-full max-w-[340px] aspect-[9/16] max-h-[85vh] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex items-center justify-center" 
+         onclick="event.stopPropagation()">
+        <video id="modal-video" controls autoplay class="w-full h-full object-cover">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- Image Lightbox Modal -->
+<div id="lightbox" 
+     onclick="closeLightbox()" 
+     class="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] hidden flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
+    
+    <!-- Modal Close Button -->
+    <button onclick="closeLightbox()" 
+            class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors focus:outline-none z-[101]">
+        <i class="fas fa-times text-3xl"></i>
+    </button>
+    
+    <div class="p-2 max-h-[90vh] max-w-[90vw]" id="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" alt="Enlarged View" class="max-h-[85vh] max-w-full object-contain rounded-sm shadow-2xl border border-white/10">
+    </div>
+</div>
+
+<footer id="contact" class="bg-charcoal text-parchment py-16 mt-20 border-t-4 border-earth">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left: Subject Info -->
+            <div class="text-center md:text-left">
+                <h3 class="font-playfair text-3xl font-medium mb-2">Suwani Poudel</h3>
+                <p class="font-lora italic text-parchment/70 mb-6">Law Student | Poet | Social Reformer</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 items-center text-xl">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/suwani.poudel.90" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/suwani_poudel/" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@suwanipoudel2?_r=1" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <!-- Email Address Link -->
+                    <a href="mailto:poudelsuwani980@gmail.com" class="text-parchment/60 hover:text-earth transition-colors text-base font-sans ml-2 flex items-center gap-2" title="Send Email">
+                        <i class="fas fa-envelope"></i>
+                        <span>poudelsuwani980@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Developer Credits -->
+            <div class="text-center md:text-right border-t border-parchment/10 pt-8 md:pt-0 md:border-t-0 md:border-l md:pl-12">
+                <p class="font-sans text-xs uppercase tracking-[0.2em] text-parchment/50 mb-2">Designed and Developed by</p>
+                <h3 class="font-playfair text-3xl font-medium mb-2">Maruf Chaudhary</h3>
+                
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 items-center text-xl">
+                    
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/8801710438953" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors text-base font-sans ml-2 flex items-center gap-2" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+8801710438953</span>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/marufchaudharyy/" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/marufchaudharyy/" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@marufchaudharyy" target="_blank" rel="noopener noreferrer" class="text-parchment/60 hover:text-earth transition-colors" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                
+                    
+
+                    <div class="flex flex-wrap justify-center md:justify-end gap-4 items-center text-xl">
+                     <!-- Email -->
+                    <a href="mailto:marufchaudharyy@gmail.com" class="text-parchment/60 hover:text-earth transition-colors text-base font-sans ml-2 flex items-center gap-2" title="Send Email">
+                        <i class="fas fa-envelope"></i>
+                        <span>marufchaudharyy@gmail.com</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-parchment/10 text-center">
+            <p class="font-sans text-xs text-parchment/40 tracking-wider">
+                &copy; <script>document.write(new Date().getFullYear())</script> Suwani Poudel. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // 1. Dynamic Photo Gallery Loader (Generates 100+ images)
+    const photoGrid = document.getElementById('photo-grid');
+
+    if (photoGrid) {
+        const startPhoto = 3; // Starting at 3 because 1.jpg and 2.jpg are in top sections
+        const totalPhotos = 100; // Adjust this number based on how many photos you have
+
+        for (let i = startPhoto; i <= totalPhotos; i++) {
+            // Alternates aspect ratios for a dynamic layout (square vs portrait)
+            const aspectClass = (i % 2 === 0) ? 'aspect-[4/5]' : 'aspect-square';
+            const delayMs = ((i - startPhoto) % 8) * 50;
+
+            const item = document.createElement('div');
+            item.className = 'group cursor-pointer scroll-reveal opacity-0 translate-y-8 transition-all duration-700';
+            item.style.transitionDelay = `${delayMs}ms`;
+
+            const container = document.createElement('div');
+            container.className = `img-zoom-container rounded-sm shadow-sm hover:shadow-xl transition-shadow duration-300 ${aspectClass} relative overflow-hidden bg-slate-100`;
+
+            const img = document.createElement('img');
+            img.src = `images/${i}.jpg`;
+            img.alt = `Suwani Poudel - Photo ${i}`;
+            img.loading = 'lazy'; // Lazy loads images for fast performance
+            img.className = 'w-full h-full object-cover filter brightness-95';
+
+            img.onclick = function() {
+                openLightbox(this.src);
+            };
+
+            // Hides empty photo slots if the image isn't in your images folder yet
+            img.onerror = function() {
+                item.style.display = 'none';
+            };
+
+            const overlay = document.createElement('div');
+            overlay.className = 'absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center justify-center';
+            overlay.innerHTML = '<i class="fas fa-expand text-white text-2xl"></i>';
+
+            container.appendChild(img);
+            container.appendChild(overlay);
+            item.appendChild(container);
+            photoGrid.appendChild(item);
+        }
+    }
+
+// 1. Dynamic Reels Grid Loader
+const videoGrid = document.getElementById('video-grid');
+
+if (videoGrid) {
+    const totalVideos = 8; // Adjust between 4 and 8 videos
+
+    for (let i = 1; i <= totalVideos; i++) {
+        const item = document.createElement('div');
+        item.className = 'group scroll-reveal opacity-0 translate-y-8 transition-all duration-700';
+        
+        const delayMs = (i % 4) * 80;
+        item.style.transitionDelay = `${delayMs}ms`;
+
+        item.innerHTML = `
+            <div class="bg-white p-2.5 rounded-2xl shadow-sm border border-charcoal/10 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <!-- Vertical Phone-Style Video Preview -->
+                <div class="relative aspect-[9/16] bg-charcoal/90 rounded-xl overflow-hidden group cursor-pointer" onclick="openReelModal('videos/${i}.mp4')">
+                    <video preload="metadata" class="w-full h-full object-cover filter brightness-95 group-hover:brightness-100 transition duration-300">
+                        <source src="videos/${i}.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Overlay Play Icon -->
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition flex items-center justify-center">
+                        <div class="w-12 h-12 bg-white/90 group-hover:bg-earth group-hover:text-white text-charcoal rounded-full flex items-center justify-center shadow-lg transition transform group-hover:scale-110">
+                            <i class="fas fa-play text-sm ml-0.5"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3 px-1 pb-1 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-playfair text-charcoal font-semibold text-xs truncate">Reel #${i}</h3>
+                        <p class="font-lora text-charcoalLight text-[10px]">Suwani Poudel</p>
+                    </div>
+                    <button onclick="openReelModal('videos/${i}.mp4')" class="text-earth text-xs font-lora hover:underline">
+                        Expand <i class="fas fa-expand text-[10px] ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Automatically hide slot if video file does not exist yet
+        const videoElement = item.querySelector('video');
+        videoElement.onerror = function() {
+            item.style.display = 'none';
+        };
+
+        videoGrid.appendChild(item);
+    }
+}
+
+
+
+
+    // 2. Single Reel Modal Popup Functions
+    const reelModal = document.getElementById('reel-modal');
+    const modalVideo = document.getElementById('modal-video');
+
+    function openReelModal(videoSrc) {
+        if (!reelModal || !modalVideo) return;
+        modalVideo.src = videoSrc;
+        reelModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => {
+            reelModal.classList.remove('opacity-0');
+            modalVideo.play();
+        }, 10);
+    }
+
+    function closeReelModal() {
+        if (!reelModal || !modalVideo) return;
+        reelModal.classList.add('opacity-0');
+        modalVideo.pause();
+
+        setTimeout(() => {
+            reelModal.classList.add('hidden');
+            modalVideo.src = '';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    // Close popup on background click or Esc key
+    if (reelModal) {
+        reelModal.addEventListener('click', closeReelModal);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !reelModal.classList.contains('hidden')) {
+                closeReelModal();
+            }
+        });
+    }
+
+    // 2. Minimalist Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('shadow-md');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
+    });
+
+    // 3. Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    }
+
+    // 4. Simple Lightbox Functions
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(imageSrc) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = imageSrc;
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => {
+            lightbox.classList.remove('opacity-0');
+        }, 10);
+    }
+
+    function closeLightbox() {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.classList.add('opacity-0');
+
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            lightboxImg.src = '';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // 5. Intersection Observer for Scroll Reveals (Runs after gallery elements are created)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
